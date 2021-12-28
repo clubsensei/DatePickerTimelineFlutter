@@ -98,6 +98,12 @@ class _DatePickerState extends State<DatePicker> {
   late final TextStyle deactivatedMonthStyle;
   late final TextStyle deactivatedDayStyle;
 
+  set currentDate(DateTime currentDate) {
+    setState(() {
+      _currentDate = currentDate;
+    });
+  }
+
   @override
   void initState() {
     // Init the calendar locale
@@ -275,7 +281,7 @@ class DatePickerController {
     //             .add(Duration(days: _datePickerState!.widget.daysCount))) <=
     //         0) {
     // date is in the range
-    _datePickerState!._currentDate = date;
+    _datePickerState!.currentDate = date;
     // }
   }
 
