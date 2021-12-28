@@ -276,13 +276,13 @@ class DatePickerController {
     _datePickerState!._controller.animateTo(_calculateDateOffset(date),
         duration: duration, curve: curve);
 
-    // if (date.compareTo(_datePickerState!.widget.startDate) >= 0 &&
-    //     date.compareTo(_datePickerState!.widget.startDate
-    //             .add(Duration(days: _datePickerState!.widget.daysCount))) <=
-    //         0) {
-    // date is in the range
-    _datePickerState!.currentDate = date;
-    // }
+    if (date.compareTo(_datePickerState!.widget.startDate) >= 0 &&
+        date.compareTo(_datePickerState!.widget.startDate
+                .add(Duration(days: _datePickerState!.widget.daysCount))) <=
+            0) {
+      // date is in the range
+      _datePickerState!.currentDate = date;
+    }
   }
 
   /// Calculate the number of pixels that needs to be scrolled to go to the
