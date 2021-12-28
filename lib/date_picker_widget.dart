@@ -137,7 +137,7 @@ class _DatePickerState extends State<DatePicker> {
     return Container(
       height: widget.height,
       child: ListView.builder(
-        padding: EdgeInsets.symmetric(horizontal: 16.0),
+        padding: EdgeInsets.symmetric(horizontal: 14.0),
         itemCount: widget.daysCount,
         scrollDirection: Axis.horizontal,
         controller: _controller,
