@@ -31,14 +31,10 @@ class DateWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      borderRadius: BorderRadius.all(
-        Radius.circular(8.0),
-      ),
       child: Container(
         width: width,
         margin: EdgeInsets.all(2.0),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(8.0)),
           color: selectionColor,
         ),
         child: Padding(
@@ -50,6 +46,7 @@ class DateWidget extends StatelessWidget {
               Text(
                 new DateFormat("MMM", locale)
                     .format(date)
+                    .toUpperCase()
                     .replaceAll('.', ''), // Month
                 style: monthTextStyle,
               ),
@@ -60,6 +57,7 @@ class DateWidget extends StatelessWidget {
               Text(
                 new DateFormat("E", locale)
                     .format(date)
+                    .toUpperCase()
                     .replaceAll('.', ''), // WeekDay
                 style: dayTextStyle,
               )
